@@ -1,0 +1,186 @@
+/*
+  Phera GitHub Pages hotfix v2
+  Load AFTER styles.css.
+  This file deliberately overrides only the broken logo crop and story pinning.
+*/
+
+:root {
+  --phera-header-height: 70px;
+}
+
+/* --------------------------------------------------------------------------
+   HEADER LOGO
+   The hero proves the source image is valid. The little header version was
+   being clipped/scaled by inherited .mark styles.
+   -------------------------------------------------------------------------- */
+
+.header .brand .mark-small {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  flex: 0 0 24px !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+  transform: none !important;
+}
+
+.header .brand .mark-small img {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: none !important;
+  translate: none !important;
+  scale: 1 !important;
+  clip-path: none !important;
+  opacity: 1 !important;
+}
+
+/* Preserve the large logo without generic .mark overrides. */
+.hero-mark img,
+.album img,
+.mark-avatar img,
+.voice-person .mark img,
+.footer-logo img {
+  display: block;
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   PINNED STORY
+   Sticky elements need a definite viewport-sized box. Using only min-height
+   allowed the stage to grow taller than the viewport, which breaks the pin.
+   -------------------------------------------------------------------------- */
+
+body.pinned #story {
+  position: relative !important;
+  height: var(--story-length, 400svh) !important;
+  min-height: var(--story-length, 400svh) !important;
+  overflow: visible !important;
+}
+
+body.pinned #story > .story-stage {
+  position: sticky !important;
+  top: var(--phera-header-height) !important;
+  width: 100% !important;
+  height: calc(100svh - var(--phera-header-height)) !important;
+  min-height: 0 !important;
+  max-height: calc(100svh - var(--phera-header-height)) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+
+  /* Keep top controls, scene and bottom navigation inside one viewport. */
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.pinned .story-top,
+body.pinned .story-bottom {
+  flex: 0 0 auto !important;
+}
+
+body.pinned .scene-stack {
+  position: relative !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+/* All three chapters occupy exactly the same stage. */
+body.pinned .scene-stack > .scene {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(14px) !important;
+  transition:
+    opacity 320ms ease,
+    transform 420ms ease,
+    visibility 0s linear 420ms !important;
+}
+
+body.pinned .scene-stack > .scene.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+  transition-delay: 0s !important;
+}
+
+/* Prevent inherited reveal rules from hiding the chapter selected by JS. */
+body.pinned.has-js .scene-stack > .scene.active {
+  opacity: 1 !important;
+}
+
+/* Page progress/chapter progress remain driven by the existing JS variables. */
+body.pinned .chapter-progress > span {
+  transform-origin: left center;
+  transform: scaleX(var(--chapter-progress, 0));
+}
+
+/* --------------------------------------------------------------------------
+   NATURAL-FLOW FALLBACK
+   Phone/reduced-motion users should simply see all chapters in order.
+   -------------------------------------------------------------------------- */
+
+body:not(.pinned) #story {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+body:not(.pinned) #story > .story-stage {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body:not(.pinned) .scene-stack {
+  overflow: visible !important;
+}
+
+body:not(.pinned) .scene-stack > .scene {
+  position: relative !important;
+  inset: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+/* Use dynamic viewport units where supported but keep a fallback. */
+@supports not (height: 100svh) {
+  body.pinned #story {
+    height: 400vh !important;
+    min-height: 400vh !important;
+  }
+  body.pinned #story > .story-stage {
+    height: calc(100vh - var(--phera-header-height)) !important;
+    max-height: calc(100vh - var(--phera-header-height)) !important;
+  }
+}
+
+/* Honour reduced motion even if JS loads late. */
+@media (prefers-reduced-motion: reduce) {
+  .scene {
+    transition: none !important;
+  }
+}
