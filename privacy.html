@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101321">
+  <meta name="description" content="Privacy Policy for Phera, a Discord bot built by Prats.">
+  <title>Phera — Privacy Policy</title>
+  <link rel="icon" href="./assets/phera-favicon.png" type="image/png">
+  <link rel="stylesheet" href="./legal.css">
+</head>
+<body>
+  <header class="legal-header">
+    <div class="legal-width">
+      <a class="legal-brand" href="./index.html" aria-label="Phera home"><span class="legal-symbol"><img src="./assets/phera-symbol.webp" alt=""></span><span>Phera</span></a>
+      <nav class="legal-nav" aria-label="Legal navigation"><a href="./terms.html">Terms</a><a href="./privacy.html" aria-current="page">Privacy</a><a href="./index.html">Home</a></nav>
+    </div>
+  </header>
+
+  <main class="legal-main legal-width">
+    <p class="legal-kicker">PHERA / PRIVACY</p>
+    <h1>Privacy Policy.</h1>
+    <p class="legal-intro">Phera processes only the Discord information needed to provide its features. This page explains the data the bot may access, how it is used, and the controls available to users and server administrators.</p>
+    <div class="legal-meta"><span>Effective 29 September 2026</span><span>Contact: @prats__ on Discord</span></div>
+
+    <div class="legal-callout"><strong>Important:</strong> Phera’s separately developed experimental language model is not trained on message content collected from Discord through the production bot.</div>
+
+    <div class="legal-card">
+      <section class="legal-section"><h2>1. Information Phera may process</h2><p>Depending on which features are enabled and used, Phera may process:</p><ul><li>Discord user, server, channel and message identifiers; display names; roles/permissions; timestamps and other Discord metadata needed to operate the bot.</li><li>Message content in channels where Phera chat/memory is enabled, plus limited recent channel history used to provide conversational context.</li><li>Attachment filenames and, when a feature needs them, image or media links supplied through Discord.</li><li>Channel summaries, saved user facts, shared channel notes and recent-message context used by Phera’s memory system.</li><li>Slash-command inputs and feature settings such as music, voice, chat-mode, moderation or game interactions.</li><li>Operational diagnostics and aggregate usage information needed to keep the bot functioning and troubleshoot problems.</li></ul></section>
+      <section class="legal-section"><h2>2. Voice data</h2><p>When voice features are enabled, audio may be processed transiently to detect the Phera wake word, transcribe an addressed request and generate a reply. Phera’s current design does not intentionally persist raw voice audio. A small amount of recent voice conversation context may exist temporarily in memory while the running process handles follow-up questions.</p></section>
+      <section class="legal-section"><h2>3. Why the information is used</h2><p>The information above is used only as needed to provide Phera’s stated features: responding to users, maintaining opted-in conversational context and memory, playing or managing media, handling voice requests, performing moderation actions requested by authorised users, running games/tools, preventing abuse and maintaining the service.</p></section>
+      <section class="legal-section"><h2>4. Memory controls</h2><p>Phera includes user and server controls for its persistent chat memory:</p><ul><li><strong>/memory</strong> shows your saved facts and the current channel context.</li><li><strong>/memory-optout</strong> can stop future memory collection for you in the current channel while still allowing Phera to answer your current messages.</li><li><strong>/forget-me</strong> clears your saved messages and facts from Phera’s chat memory.</li><li>Authorised server managers can use <strong>/memory-reset</strong> to clear a channel’s memory and can set the channel chat mode to <strong>off</strong> to stop chat/memory collection there.</li></ul></section>
+      <section class="legal-section"><h2>5. Retention and deletion</h2><p>Phera keeps persistent API data only while it is needed for the enabled features or until it is deleted. No fixed retention period is promised for persistent memory. Users can use the controls above or contact <strong>@prats__</strong> on Discord to request access, correction or deletion. Data will also be removed when it is no longer needed to operate the relevant feature, when required by Discord, or if Phera stops operating.</p></section>
+      <section class="legal-section"><h2>6. Third-party processing</h2><p>To provide requested features, Phera may send only the information needed for that feature to service providers. Depending on configuration, these may include hosting providers, AI or speech-processing providers such as Groq, music/catalogue or playback services such as Spotify and supported media sources, and search/image providers. Data is not shared with data brokers or advertising networks and Discord API data is not sold.</p></section>
+      <section class="legal-section"><h2>7. Model training</h2><p>Discord message content obtained by the production bot is not used to train Phera’s separately developed custom language model. The model-development project uses separately sourced training material. This separation is intentional.</p></section>
+      <section class="legal-section"><h2>8. Security</h2><p>Phera’s operator uses reasonable technical and administrative safeguards intended to protect Discord API data and developer credentials. Access to stored data is limited to what is needed to operate and maintain the bot. Users should never send passwords, authentication tokens or other secrets to Phera.</p></section>
+      <section class="legal-section"><h2>9. Children</h2><p>Phera is not directed to anyone below Discord’s minimum permitted age. Users must meet Discord’s minimum age requirement in their country.</p></section>
+      <section class="legal-section"><h2>10. Your choices and contact</h2><p>You can remove Phera from a server (if authorised), stop using the bot, use the memory controls above, or contact <strong>@prats__</strong> on Discord for privacy requests, support or reports. Requests will be handled as reasonably and promptly as possible.</p></section>
+      <section class="legal-section"><h2>11. Changes</h2><p>This Privacy Policy may be updated when Phera’s features, service providers or data practices change. The effective date at the top will be updated for material changes.</p></section>
+    </div>
+  </main>
+
+  <footer class="legal-footer"><div class="legal-width"><span>© 2026 Phera · built by Prats</span><div class="legal-footer-links"><a href="./terms.html">Terms</a><a href="./index.html">Back to Phera</a></div></div></footer>
+</body>
+</html>
