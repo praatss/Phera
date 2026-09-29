@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101223">
+  <meta name="description" content="Phera is Prats' AI-powered Discord bot for chat, memory, music, voice, cinema, games and more — with a custom Phera language model now being built from scratch.">
+  <meta property="og:title" content="Phera — built by Prats">
+  <meta property="og:description" content="A Discord bot that talks, remembers, DJs the VC, speaks back, researches, creates and plays — while its own language model is being built from scratch.">
+  <meta property="og:type" content="website">
+  <title>Phera — Built by Prats</title>
+  <link rel="icon" href="./assets/phera-favicon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v12M9 8l11-2"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="15" r="3"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 6 10 6-10 6Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12" stroke-width="3"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="m7 6 8 6-8 6Z" fill="currentColor" stroke="none"/><path d="M17 6v12"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 5.4a5 5 0 0 0-7.1 0L12 7.1l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.5a5 5 0 0 0 0-7.1Z"/></symbol>
+    <symbol id="i-memory" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="4"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><path d="M9 12h6"/></symbol>
+    <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 5v14M17 5v14M3 9h4m10 0h4M3 15h4m10 0h4"/></symbol>
+    <symbol id="i-game" viewBox="0 0 24 24"><path d="M7 8h10l4 7a3 3 0 0 1-5 3l-2-2h-4l-2 2a3 3 0 0 1-5-3l4-7Z"/><path d="M8 11v4m-2-2h4M16 12h.01M18 14h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.8 7.2L22 12l-7.2 2.8L12 22l-2.8-7.2L2 12l7.2-2.8L12 2Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></symbol>
+  </svg>
+
+  <header class="site-header" id="site-header">
+    <a class="brand" href="#top" aria-label="Phera home">
+      <span class="brand-symbol"><img src="./assets/phera-symbol.webp" alt="" width="1254" height="1254"></span>
+      <span>Phera</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#showcase">What it does</a>
+      <a href="#lab">Model Lab</a>
+      <a class="nav-cta" href="https://discord.com/oauth2/authorize?client_id=1544260265900773416" target="_blank" rel="noopener noreferrer">Add to Discord <svg class="icon"><use href="#i-up-right"/></svg></a>
+    </nav>
+    <button class="mobile-menu" id="mobile-menu" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-aurora" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Built by Prats · made for Discord</p>
+        <h1>Phera makes a server feel <em>alive.</em></h1>
+        <p class="hero-lede">I built Phera to talk with the chat, remember the useful bits, run the music, speak in VC, create things and keep the server moving without feeling like a command manual.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1544260265900773416" target="_blank" rel="noopener noreferrer">Add Phera to Discord <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="button ghost" href="#showcase">See what I built <svg class="icon"><use href="#i-down"/></svg></a>
+        </div>
+        <p class="hero-note">The public Discord bot is live. Phera's own language model is a separate research build in progress.</p>
+      </div>
+
+      <div class="hero-product reveal" aria-label="Illustrative Phera Discord preview">
+        <div class="discord-shell tilt-card" data-tilt>
+          <div class="discord-topbar">
+            <div class="server-badge">P</div>
+            <div><strong># the-lounge</strong><span>friends, music & questionable decisions</span></div>
+            <div class="live-pill"><i></i> Phera online</div>
+          </div>
+          <div class="discord-feed">
+            <div class="chat-row human">
+              <span class="avatar ava-j">J</span>
+              <div><p class="chat-meta">jamie <span>today at 8:41 pm</span></p><p>what was that song i kept playing last week?</p></div>
+            </div>
+            <div class="chat-row phera-row">
+              <span class="avatar phera-avatar"><img src="./assets/phera-symbol.webp" alt="Phera" width="1254" height="1254"></span>
+              <div><p class="chat-meta">Phera <b>BOT</b> <span>today at 8:41 pm</span></p><p>you were rinsing <strong>After Hours</strong> like rent was due 😭 want it back on?</p></div>
+            </div>
+            <div class="mini-player">
+              <div class="mini-cover"><img src="./assets/phera-symbol.webp" alt="" width="1254" height="1254"></div>
+              <div class="mini-track"><span>NOW PLAYING</span><strong>After Hours</strong><small>matched & playing in VC</small></div>
+              <div class="mini-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="memory-chip"><svg class="icon"><use href="#i-memory"/></svg><span>Memory used quietly · Jamie likes late-night R&B</span></div>
+          </div>
+          <div class="composer"><span>Message #the-lounge</span><b>⌁</b></div>
+        </div>
+        <div class="float-chip chip-one"><svg class="icon"><use href="#i-mic"/></svg><span>“Phera, skip this.”</span></div>
+        <div class="float-chip chip-two"><svg class="icon"><use href="#i-search"/></svg><span>deep search</span></div>
+      </div>
+
+      <a class="scroll-cue" href="#showcase"><span>Scroll through Phera</span><svg class="icon"><use href="#i-down"/></svg></a>
+    </section>
+
+    <section class="capability-ribbon" aria-label="Phera capability overview">
+      <div class="ribbon-track">
+        <span>CHAT THAT JOINS IN</span><i></i><span>ADAPTIVE MEMORY</span><i></i><span>FULL VC MUSIC</span><i></i><span>HANDS-FREE VOICE</span><i></i><span>PHERA CINEMA</span><i></i><span>20-GAME ARCADE</span><i></i><span>DEEP RESEARCH</span><i></i><span>CREATIVE TOOLS</span>
+        <span aria-hidden="true">CHAT THAT JOINS IN</span><i aria-hidden="true"></i><span aria-hidden="true">ADAPTIVE MEMORY</span><i aria-hidden="true"></i><span aria-hidden="true">FULL VC MUSIC</span><i aria-hidden="true"></i><span aria-hidden="true">HANDS-FREE VOICE</span><i aria-hidden="true"></i><span aria-hidden="true">PHERA CINEMA</span><i aria-hidden="true"></i><span aria-hidden="true">20-GAME ARCADE</span><i aria-hidden="true"></i><span aria-hidden="true">DEEP RESEARCH</span><i aria-hidden="true"></i><span aria-hidden="true">CREATIVE TOOLS</span>
+      </div>
+    </section>
+
+    <section class="showcase" id="showcase">
+      <div class="showcase-intro section-width reveal">
+        <p class="eyebrow">NOT A COMMAND DUMP</p>
+        <h2>I wanted Phera to feel like part of the server, so the features <em>flow into each other.</em></h2>
+      </div>
+
+      <article class="feature-scene scene-chat" data-accent="lavender">
+        <div class="scene-inner section-width">
+          <div class="scene-copy reveal">
+            <p class="scene-number">01 · CONVERSATION</p>
+            <h3>It talks like it was already <em>in the chat.</em></h3>
+            <p>Phera can reply automatically, jump in only when it has something useful to add, or wait for a mention. Recent conversation and saved details are pulled in when they actually matter, instead of being dumped back at you.</p>
+            <p class="scene-whisper">Memory can be inspected, corrected, switched off or cleared. The point is continuity, not creepiness.</p>
+          </div>
+
+          <div class="scene-visual reveal">
+            <div class="chat-stage glass-card">
+              <div class="chat-stage-head"><span># general</span><span class="mode-pill" id="mode-pill">smart replies</span></div>
+              <div class="chat-stage-body" id="memory-demo">
+                <div class="saved-memory"><svg class="icon"><use href="#i-memory"/></svg><span id="memory-detail">Jamie usually plays Minecraft on Tuesday nights.</span></div>
+                <div class="chat-row human"><span class="avatar ava-j">J</span><div><p class="chat-meta">jamie</p><p id="human-line">guys what are we playing tonight</p></div></div>
+                <div class="chat-row phera-row"><span class="avatar phera-avatar"><img src="./assets/phera-symbol.webp" alt="Phera"></span><div><p class="chat-meta">Phera <b>BOT</b></p><p id="phera-line">it is literally Tuesday. minecraft is staring at you bro 😭</p></div></div>
+              </div>
+              <div class="memory-switcher" role="group" aria-label="Memory demo states">
+                <button class="active" data-memory-state="0">remember</button><button data-memory-state="1">update</button><button data-memory-state="2">opt out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-scene scene-music" data-accent="aqua">
+        <div class="scene-inner section-width reverse">
+          <div class="scene-copy reveal">
+            <p class="scene-number">02 · MUSIC</p>
+            <h3>Drop a song. Phera handles the <em>whole session.</em></h3>
+            <p>I built the player for actual shared listening: search by song or artist, use Spotify catalogue data, match playable audio from supported sources, then keep the queue alive with controls, favourites, history, radio, lyrics and recaps.</p>
+            <p class="scene-whisper">You can seek, loop, replay, go back, shuffle, edit the queue, set a sleep timer and even correct a bad source match without leaving Discord.</p>
+          </div>
+
+          <div class="scene-visual reveal">
+            <div class="music-player glass-card" id="music-player">
+              <div class="player-head"><span><svg class="icon"><use href="#i-music"/></svg> PHERA MUSIC</span><span id="track-source">matched source</span></div>
+              <div class="player-hero">
+                <div class="album-art"><img src="./assets/phera-symbol.webp" alt="Phera artwork"></div>
+                <div class="song-copy"><small id="song-kicker">NOW PLAYING</small><h4 id="track-title">After Hours</h4><p id="track-artist">The Lounge · shared VC</p><div class="lyric-line"><span id="lyric-text">♪ save your tears for another day</span></div></div>
+              </div>
+              <div class="scrubber"><span id="scrub-fill"></span></div>
+              <div class="player-meta"><span id="elapsed">0:42</span><span id="duration">3:42</span></div>
+              <div class="player-controls">
+                <button id="favourite" aria-label="Favourite demo track" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg></button>
+                <button class="main-play" id="play" aria-label="Play visual demo" aria-pressed="true"><svg class="icon"><use href="#i-pause"/></svg></button>
+                <button id="next" aria-label="Next demo track"><svg class="icon"><use href="#i-next"/></svg></button>
+              </div>
+              <div class="queue-peek"><span>UP NEXT</span><strong id="next-track">Blue Hour</strong><small>autoplay is learning the room</small></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-scene scene-voice" data-accent="peach">
+        <div class="scene-inner section-width">
+          <div class="scene-copy reveal">
+            <p class="scene-number">03 · VOICE</p>
+            <h3>Say “Phera” and the VC can <em>answer back.</em></h3>
+            <p>Phera can join voice, speak replies, switch between 25 voices and listen for a wake word before handling short addressed requests. Music controls stay hands-free too — skip, pause, replay, shuffle, volume, artist radio and more.</p>
+            <p class="scene-whisper">The bot only routes short addressed speech into the voice-command pipeline; ordinary VC chatter is ignored by design.</p>
+          </div>
+
+          <div class="scene-visual reveal">
+            <div class="voice-stage glass-card" id="voice-stage">
+              <div class="voice-orb"><div class="voice-logo"><img src="./assets/phera-symbol.webp" alt="Phera"></div><span class="listening-dot"></span></div>
+              <p class="wake-label">WAKE WORD</p>
+              <h4>“Phera, play Creep.”</h4>
+              <div class="voice-wave" id="voice-wave" aria-hidden="true"></div>
+              <div class="voice-response"><span>Phera</span><p>got you. queueing it now.</p></div>
+              <div class="voice-foot"><span>25 voices</span><span>music ducks under speech</span><span>spoken replies</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-scene scene-cinema" data-accent="gold">
+        <div class="scene-inner section-width reverse">
+          <div class="scene-copy reveal">
+            <p class="scene-number">04 · PHERA CINEMA</p>
+            <h3>A prompt can become a <em>tiny film studio.</em></h3>
+            <p>Phera Cinema turns an idea into a story, cast, dialogue, voices, shots and an edit. You can steer the look from live-action cinema to noir, anime, cyberpunk, fantasy, storybook or sci-fi, then choose widescreen, vertical or square delivery.</p>
+            <p class="scene-whisper">Video and score generation are enabled when the configured generation backends are available — the directing pipeline itself lives inside Phera.</p>
+          </div>
+
+          <div class="scene-visual reveal">
+            <div class="cinema-stage glass-card">
+              <div class="cinema-top"><span>PHERA CINEMA · DIRECTOR'S CHAIR</span><span class="rec"><i></i> rendering</span></div>
+              <div class="storyboard">
+                <div class="frame frame-a"><span>01</span><div class="silhouette one"></div><p>wide · neon rain</p></div>
+                <div class="frame frame-b"><span>02</span><div class="silhouette two"></div><p>close-up · dialogue</p></div>
+                <div class="frame frame-c"><span>03</span><div class="silhouette three"></div><p>final shot · dissolve</p></div>
+              </div>
+              <div class="timeline"><i class="clip clip-1"></i><i class="clip clip-2"></i><i class="clip clip-3"></i><span class="playhead"></span></div>
+              <div class="cinema-caption"><strong>Neon cyberpunk</strong><span>cast locked · voices assigned · edit building</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature-scene scene-arcade" data-accent="pink">
+        <div class="scene-inner section-width">
+          <div class="scene-copy reveal">
+            <p class="scene-number">05 · PHERA ARCADE</p>
+            <h3>The chat can turn into a <em>game room.</em></h3>
+            <p>I built a public arcade with 20 playable games rendered straight into Discord. People can watch, jump into multiplayer rounds, use button or keyboard-style controls, earn persistent XP and chase achievements and leaderboards.</p>
+            <p class="scene-whisper">Snake, 2048, Connect Four, Blackjack, Maze, Word Grid, Battleship and the rest all run through the same live arcade system.</p>
+          </div>
+
+          <div class="scene-visual reveal">
+            <div class="arcade-cabinet glass-card">
+              <div class="arcade-marquee">PHERA <span>ARCADE</span></div>
+              <div class="arcade-screen">
+                <div class="snake-grid" id="snake-grid" aria-hidden="true"></div>
+                <div class="arcade-hud"><span>SNAKE</span><strong>SCORE <b id="arcade-score">1280</b></strong></div>
+              </div>
+              <div class="arcade-controls"><span>W</span><div><span>A</span><span>S</span><span>D</span></div><button aria-label="Decorative arcade button"></button><button aria-label="Decorative arcade button"></button></div>
+              <p>20 cabinets · multiplayer · XP · achievements</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="orbit-section">
+      <div class="section-width orbit-grid">
+        <div class="orbit-copy reveal">
+          <p class="eyebrow">AND THE STUFF BETWEEN THE BIG MOMENTS</p>
+          <h2>Phera also does the <em>useful weird little things</em> that keep a server moving.</h2>
+          <p>Research a question, catch up on a busy channel, translate something, react to a photo, generate an image, set a reminder, moderate the room, drop a soundboard clip or just let Phera roast a terrible take.</p>
+        </div>
+        <div class="orbit-visual reveal" aria-label="More Phera capabilities">
+          <div class="orbit-core"><img src="./assets/phera-symbol.webp" alt="Phera"></div>
+          <span class="orbit-pill p1"><svg class="icon"><use href="#i-search"/></svg> deep research</span>
+          <span class="orbit-pill p2"><svg class="icon"><use href="#i-spark"/></svg> image generation</span>
+          <span class="orbit-pill p3"><svg class="icon"><use href="#i-shield"/></svg> moderation</span>
+          <span class="orbit-pill p4">summaries</span>
+          <span class="orbit-pill p5">translation</span>
+          <span class="orbit-pill p6">reminders</span>
+          <span class="orbit-pill p7">soundboard</span>
+          <span class="orbit-pill p8">photo reactions</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="model-lab" id="lab">
+      <div class="lab-glow" aria-hidden="true"></div>
+      <div class="section-width lab-grid">
+        <div class="lab-copy reveal">
+          <p class="eyebrow dark">PHERA MODEL LAB · FROM SCRATCH</p>
+          <h2>The next step is teaching Phera to run on a model I built <em>myself.</em></h2>
+          <p>Right now the Discord bot uses hosted AI models for its production intelligence. Separately, I'm building Phera's own transformer from the tokenizer up — dataset, architecture, pretraining, checkpoints and evaluation.</p>
+          <p>The current research build is <strong>Phera v0.2</strong>: a roughly 97.2M-parameter base model that has completed its first 245.76M-token pretraining run. It can produce language, but it still needs stronger base knowledge before proper instruction and personality tuning.</p>
+          <div class="lab-status"><span class="pulse"></span><strong>Current stage</strong><span>base model evaluation + next pretraining curriculum</span></div>
+        </div>
+
+        <div class="lab-console reveal" aria-label="Phera model development status">
+          <div class="console-top"><span></span><span></span><span></span><b>PheraModel / v0.2</b></div>
+          <div class="console-body">
+            <div class="console-line"><span>architecture</span><strong>97,241,856 params</strong></div>
+            <div class="console-line"><span>tokenizer</span><strong>16,000 vocab</strong></div>
+            <div class="console-line"><span>pretraining</span><strong>245,760,000 tokens seen</strong></div>
+            <div class="console-line"><span>checkpoint</span><strong>phera-v02-best.pt</strong></div>
+            <div class="loss-card"><span>VALIDATION LOSS</span><div class="loss-chart" aria-hidden="true"><svg viewBox="0 0 420 120" preserveAspectRatio="none"><defs><linearGradient id="lossFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7568d8" stop-opacity=".32"/><stop offset="1" stop-color="#7568d8" stop-opacity="0"/></linearGradient></defs><path class="loss-area" d="M0 18 C35 22,50 40,82 47 S130 60,158 70 S208 79,238 85 S290 92,320 96 S370 101,420 104 L420 120 L0 120 Z"/><path class="loss-line" d="M0 18 C35 22,50 40,82 47 S130 60,158 70 S208 79,238 85 S290 92,320 96 S370 101,420 104"/></svg><span class="loss-start">9.838</span><span class="loss-end">3.004 best</span></div></div>
+            <div class="pipeline">
+              <span class="done">corpus</span><i></i><span class="done">tokenizer</span><i></i><span class="done">pretrain</span><i></i><span class="active">evaluate</span><i></i><span>instruct</span><i></i><span>personality</span>
+            </div>
+            <p class="console-note">Not the production bot brain yet — this is the research track.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-glow" aria-hidden="true"></div>
+      <div class="section-width closing-inner reveal">
+        <div class="closing-mark"><img src="./assets/phera-symbol.webp" alt="" width="1254" height="1254"></div>
+        <p class="eyebrow">BUILT, BROKEN, FIXED, REBUILT.</p>
+        <h2>Phera is already doing a lot.<br><em>I'm still making it more Phera.</em></h2>
+        <div class="closing-actions"><a class="button primary" href="https://discord.com/oauth2/authorize?client_id=1544260265900773416" target="_blank" rel="noopener noreferrer">Add to Discord <svg class="icon"><use href="#i-up-right"/></svg></a><a class="button ghost" href="#lab">See the model lab</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-width">
+    <a href="#top" class="footer-brand" aria-label="Back to top"><img src="./assets/phera-wordmark.webp" alt="Phera" width="2048" height="722"></a>
+    <p>Designed and developed by <strong>Prats</strong>.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+    <a href="#showcase">What it does</a><a href="#lab">Model Lab</a><a href="https://discord.com/oauth2/authorize?client_id=1544260265900773416" target="_blank" rel="noopener noreferrer">Add to Discord ↗</a>
+  </div>
+</body>
+</html>
